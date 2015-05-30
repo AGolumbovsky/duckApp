@@ -3,7 +3,8 @@ var Schema = mongoose.Schema;
 
 var candidateSchema = new Schema({
 	name: String, 
-	location: String
+	location: String, 
+	rating: Number
 	//more once this shit works
 });
 

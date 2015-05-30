@@ -2,6 +2,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
+//require models 
 //var User = require('./api/models/User');
 var Candidate = require('./api/models/Candidate');
 
@@ -12,7 +13,6 @@ var app = express();
 // static == html css image files in the
 // in the public forlder
 app.use(express.static(__dirname + '/public'));
-
 //parse the shit out of json
 app.use(bodyParser.json());
 

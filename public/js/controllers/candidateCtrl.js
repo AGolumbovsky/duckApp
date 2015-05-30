@@ -18,6 +18,11 @@ app.controller('candidateCtrl', function($scope) {
 
 	$scope.editCandidate = function() {
 		//put ZE LOGIC
-		console.log('edit button works')
+		console.log('edit button works');
 	};
+
+	$scope.deleteCandidate = function() {
+		//mor LoGiC
+		console.log('delete button works');
+	}
 });
