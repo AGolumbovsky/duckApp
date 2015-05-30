@@ -19,6 +19,7 @@ app.use(bodyParser.json());
 // connections to mongo
 var port = 8080;
 mongoose.connect('mongodb://localhost/dupApp');
+var db = mongoose.connection;
 
 
 //test
