@@ -15,4 +15,9 @@ app.controller('candidateCtrl', function($scope) {
 		
 		$scope.newCandidate = {};
 	};
+
+	$scope.editCandidate = function() {
+		//put ZE LOGIC
+		console.log('edit button works')
+	};
 });

@@ -21,7 +21,13 @@
 		<br>
 		<div class="container">
 			<ul ng-repeat="candidate in candidateList">
-				<li><strong>Name:</strong> {{ candidate.name }}  <strong>From:</strong> {{ candidate.location }}</li>
+				<li><strong>Name:</strong> {{ candidate.name }}  <strong>From:</strong> {{ candidate.location }}
+					<div>
+						<button ng-click="editCandidate">Edit</button>
+						<button>Delete</button>
+					</div>
+				</li>
+
 			</ul>
 		</div>
 
