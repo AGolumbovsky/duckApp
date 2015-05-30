@@ -1,0 +1,28 @@
+<div class="container" ng-controller="candidateCtrl">
+		<div>
+			<br>
+
+			Name:
+			<br>
+			<input type="text" placeholder="you are an asshole" ng-model="newCandidate.name" />
+			{{ newCandidate.name }}
+			<br>
+			
+
+			Location:
+			<br>
+			<input type="text" placeholder="nobody likes you" ng-model="newCandidate.location"></input>
+			{{ newCandidate.location }}
+			<br>
+			<br>
+
+			<button ng-click="addCandidate()">Add Candidate</button>
+		</div>
+		<br>
+		<div class="container">
+			<ul ng-repeat="candidate in candidateList">
+				<li><strong>Name:</strong> {{ candidate.name }}  <strong>From:</strong> {{ candidate.location }}</li>
+			</ul>
+		</div>
+
+	</div>
