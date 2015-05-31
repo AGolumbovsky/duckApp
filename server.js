@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 //var User = require('./api/models/User');
 var Candidate = require('./api/models/Candidate');
 
-//create an appliction
+//create the server
 var app = express();
 
 // middolware
@@ -21,12 +21,29 @@ var port = 8080;
 mongoose.connect('mongodb://localhost/dupApp');
 var db = mongoose.connection;
 
+//post candidate to db
+app.post('/api/candidates', function(req, res) {
+	var candidate = new Candidate(req.body);
+	candidate.save(function(err, new_candidate) {
+		if (err) {
+			console.log("can't create a candidate", err);
+		}
+		res.json(new_candidate);
+	});
+});
 
-//test
+//get all candidates from db
+app.get('api/candidates', function(req, res) {
+	Place
+	.find()
+	.exec().then(function(candidates) {
+		return res.json(candidates);
+	});
+});
 
 
 
-//endpoints
+
 
 
 
