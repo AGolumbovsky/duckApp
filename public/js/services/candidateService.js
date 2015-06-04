@@ -31,5 +31,4 @@ app.service('candidateService', function($http, $q) {
 
 
 
-
 });
