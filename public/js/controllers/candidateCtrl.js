@@ -3,7 +3,8 @@ var app = angular.module('dupApp');
 app.controller('candidateCtrl', function($scope, candidateService/* WHY?????*/) { //what params?
 
 	$scope.candidateList = [];
-	//add something here? $scope.crap = .fromDB.crap?
+	
+	
 
 	$scope.addCandidate = function(newCandidate) {
 		console.log($scope.newCandidate);
