@@ -10,6 +10,7 @@ var Candidate = require('./api/models/Candidate');
 var app = express();
 
 // middolware
+
 // static == html css image files in the
 // in the public forlder
 app.use(express.static(__dirname + '/public'));
