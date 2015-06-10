@@ -35,13 +35,23 @@ app.post('/api/candidates', function(req, res) {
 });
 
 //get all candidates from db
-app.get('api/candidates', function(req, res) {
-	Candidate
-	.find()
-	.exec().then(function(candidates) {
-		return res.json(candidates);
-	});
+
+//TEST
+app.get('/', function(req, res) {
+    res.send('hello, makaka');
 });
+
+app.get('*', function(req, res) {
+    res.send('420 not found if you know what i mean');
+})
+
+//app.get('api/candidates', function(req, res) {
+//	Candidate
+//	.find()
+//	.exec().then(function(candidates) {
+//		return res.json(candidates);
+//	});
+//});
 
 
 
