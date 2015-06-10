@@ -4,11 +4,10 @@ app.service('candidateService', function($http, $q) {
 
 	this.getCandidates = function() {
 		var dfd = $q.defer();
-		var url = 'api/candidates';
 
 		$http({
 			method: 'GET', 
-			url: url
+			url: '/api/candidates'
 		})
 			.then(function(response) {
 				dfd.resolve(response.data);

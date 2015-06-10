@@ -14,6 +14,7 @@ var app = express();
 // static == html css image files in the
 // in the public forlder
 app.use(express.static(__dirname + '/public'));
+
 //parse the shit out of json
 app.use(bodyParser.json());
 
@@ -35,7 +36,7 @@ app.post('/api/candidates', function(req, res) {
 
 //get all candidates from db
 app.get('api/candidates', function(req, res) {
-	Place
+	Candidate
 	.find()
 	.exec().then(function(candidates) {
 		return res.json(candidates);
