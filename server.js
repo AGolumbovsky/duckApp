@@ -42,7 +42,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('*', function(req, res) {
-    res.send('420 not found if you know what i mean');
+    res.send('420 not found if you know what i mean', 404);
 })
 
 //app.get('api/candidates', function(req, res) {
@@ -52,11 +52,6 @@ app.get('*', function(req, res) {
 //		return res.json(candidates);
 //	});
 //});
-
-
-
-
-
 
 
 
