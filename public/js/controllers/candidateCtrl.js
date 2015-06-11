@@ -1,11 +1,15 @@
 var app = angular.module('dupApp');
 
-app.controller('candidateCtrl', function($scope, candidateService/* WHY?????*/) { //what params?
+app.controller('candidateCtrl', function($scope, candidateService) { //what params?
 
 	$scope.candidateList = [];
 	
-	
-
+	$scope.loadCandidates = function(some bs) {
+		console.log('more is coming');
+		candidateService.getCandidates() // not sure
+			.then(???) ///what here?
+	}
+   
 	$scope.addCandidate = function(newCandidate) {
 		console.log($scope.newCandidate);
 
@@ -20,14 +24,14 @@ app.controller('candidateCtrl', function($scope, candidateService/* WHY?????*/) 
 
 	$scope.editCandidate = function() {
 		//put ZE LOGIC
-		for(var i=1; i>0; i++) { //don't forget this here after your urge for violence has been satisfied
-		console.log('edit button works. Now crash and burn!!!!!');
-	    }
+		console.log('edit button, editCandidate() work' );
+
+	    
 	};
 
 	$scope.deleteCandidate = function() {
 		//mor LoGiC
-		console.log('delete button works');
+		console.log('delete button, deleteCandidate() work');
 	}
 
 });

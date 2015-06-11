@@ -40,7 +40,7 @@ app.post('/api/candidates', function(req, res) {
 app.get('/', function(req, res) {
     res.send('hello, makaka');
 });
-app.get('/:name', function(req, res) {
+app.get('api/candidates/:name', function(req, res) {
     var name = req.params.name;
     var getCity = req.query.getCity;
     var getState = req.query.getState;
