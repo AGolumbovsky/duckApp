@@ -36,10 +36,17 @@ app.post('/api/candidates', function(req, res) {
 
 //get all candidates from db
 
-//TEST
+//TESTs
 app.get('/', function(req, res) {
     res.send('hello, makaka');
 });
+app.get('/:name', function(req, res) {
+    var name = req.params.name;
+    var getCity = req.query.getCity;
+    var getState = req.query.getState;
+    res.send({name: name, city: getCity, state: getState}) // results of imagination
+})
+
 
 app.get('*', function(req, res) {
     res.send('420 not found if you know what i mean', 404);
