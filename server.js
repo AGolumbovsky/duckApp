@@ -26,7 +26,7 @@ var db = mongoose.connection;
 
 
 //post candidate to db
-app.post('/api/candidates', function(req, res) {
+app.post('/candidates', function(req, res) {
 	var candidate = new Candidate(req.body);
 	candidate.save(function(err, new_candidate) {
 		if (err) {
@@ -39,11 +39,9 @@ app.post('/api/candidates', function(req, res) {
 //get all candidates from db
 
 //TESTs
-app.get('/home', function(req, res) { // change "home" to '/' if bug
-    res.send({
-    	//all the candidates listed
-    	"work?": "fuck yeah!!"
-    });
+app.get('/candidates', function(req, res) { // change "home" to '/' if bug
+	console.log('server received GET request');
+    res.json(candidates);
 });
 app.get('api/candidates/:name', function(req, res) {
     var name = req.params.name;
