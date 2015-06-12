@@ -5,7 +5,7 @@ app.controller('candidateCtrl', function($scope, candidateService) { //what para
 	$scope.candidateList = []; 
 	
 	$scope.loadCandidates = function(some_bs) {
-		console.log('more is coming');
+		console.log('Load cans...will work some day');
 		candidateService.getCandidates() // not sure
 			.then() ///what here?
 	}

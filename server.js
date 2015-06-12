@@ -24,25 +24,43 @@ var db = mongoose.connection;
 
 // All app.get stuff maybe will go into ROUTES folder
 
+// end Points
 
 //post candidate to db
 app.post('/candidates', function(req, res) {
 	var candidate = new Candidate(req.body);
-	candidate.save(function(err, new_candidate) {
+	candidate.save(function(err, newCan) {
 		if (err) {
 			console.log("can't create a candidate", err);
 		}
-		res.json(new_candidate);
+		res.json(newCan);
 	});
 });
+
+
+// app.post over
+// app.post('candidates', function(req, res) {
+// 	console.log(req.body);
+
+// 	db.candidates.insert(req.body, function(err, cand) {
+// 		res.json(cand);
+// 	});
+// });
 
 //get all candidates from db
 
 //TESTs
 app.get('/candidates', function(req, res) { // change "home" to '/' if bug
+
 	console.log('server received GET request');
-    res.json(candidates);
+
+	db.candidates.find(function(err, cands) {
+		condole.log(cands);
+		res.json(cands);
+	});
+
 });
+
 app.get('api/candidates/:name', function(req, res) {
     var name = req.params.name;
     var getCity = req.query.getCity;
