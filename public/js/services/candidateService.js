@@ -15,7 +15,7 @@ app.service('candidateService', function($http, $q) {
 			return dfd.promise;
 	};
 
-	this.addCandidate = function(candidate) {
+	this.addCandidate = function() {
 		var dfd = $q.defer();
 		$http({
 			method: 'POST', 

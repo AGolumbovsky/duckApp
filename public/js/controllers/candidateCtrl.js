@@ -2,12 +2,12 @@ var app = angular.module('dupApp');
 
 app.controller('candidateCtrl', function($scope, candidateService) { //what params?
 
-	$scope.candidateList = [];
+	$scope.candidateList = []; 
 	
-	$scope.loadCandidates = function(some bs) {
+	$scope.loadCandidates = function(some_bs) {
 		console.log('more is coming');
 		candidateService.getCandidates() // not sure
-			.then(???) ///what here?
+			.then() ///what here?
 	}
    
 	$scope.addCandidate = function(newCandidate) {
