@@ -7,7 +7,7 @@ app.service('candidateService', function($http, $q) {
 
 		$http({
 			method: 'GET', 
-			url: '/api/candidates'
+			url: '/candidates'
 		})
 			.then(function(response) {
 				dfd.resolve(response.data);
@@ -15,12 +15,12 @@ app.service('candidateService', function($http, $q) {
 			return dfd.promise;
 	};
 
-	this.addCandidate = function() {
+	this.addCandidate = function(newCandidate) {
 		var dfd = $q.defer();
 		$http({
 			method: 'POST', 
-			url: '/api/candidates', 
-			data: candidate
+			url: '/candidates', 
+			data: newCandidate
 		})
 			.then(function(response) {
 				dfd.resolve(response.data);

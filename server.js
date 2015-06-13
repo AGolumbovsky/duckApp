@@ -54,28 +54,31 @@ app.get('/candidates', function(req, res) { // change "home" to '/' if bug
 
 	console.log('server received GET request');
 
-	db.candidates.find(function(err, cands) {
-		condole.log(cands);
+	Candidate.find(function(err, cands) {  // .find() will return array(full of objs.)
+		console.log(cands);
 		res.json(cands);
 	});
 
 });
 
-app.get('api/candidates/:name', function(req, res) {
-    var name = req.params.name;
-    var getCity = req.query.getCity;
-    var getState = req.query.getState;
-    res.send({name: name, city: getCity, state: getState}) // results of imagination
-})
+// app.get('/candidates/:name', function(req, res) {
+//     var name = req.params.name;
+//     var getCity = req.query.getCity;
+//     var getState = req.query.getState;
+//     res.send({name: name, city: getCity, state: getState}) // results of imagination
+// })
 
 
-app.get('/hidden', function(req, res) {
-    res.send('You are in the restricted area. Please proceed with caution');
-})
+// app.get('/hidden', function(req, res) {
+//     res.send('You are in the restricted area. Please proceed with caution');
+// })
 
-app.get('*', function(req, res) {
-	res.send("Not here. Message 420", 404)
-})
+// app.get('*', function(req, res) {
+// 	res.send("Not here. Message 420", 404)
+// })
+
+
+
 
 //app.get('api/candidates', function(req, res) {
 //	Candidate

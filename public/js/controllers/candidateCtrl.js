@@ -10,15 +10,19 @@ app.controller('candidateCtrl', function($scope, candidateService) { //what para
 			.then() ///what here?
 	}
    
-	$scope.addCandidate = function(newCandidate) {
+	$scope.addCandidate = function() {
 		console.log($scope.newCandidate);
 
 		
-		$scope.candidateList.push({ 
-			name: $scope.newCandidate.name, 
-			location: $scope.newCandidate.location
-		});
-		
+		$scope.candidateList.push($scope.newCandidate);
+
+		candidateService.addCandidate($scope.newCandidate)
+		.then(function(res) {
+			console.log('got response', res);
+			candidateService.getCandidates().then(function(res) {
+				$scope.candidateList = res;
+			})
+		})
 		$scope.newCandidate = {};
 	};
 
