@@ -27,7 +27,10 @@
 
 		<!-- ### search for candiddates ### -->
 
-		<input type="text" placeholder="search for duck" ng-model="searchCandidates.name" />
+		<div>
+			<input type="text" placeholder="search for duck" ng-model="searchCandidates.name" />
+
+			<button ng-click="searchCandidates()">Search</button>
 			{{ searchCandidates.name }}
 		
 		<!-- ### display candidates in the list ### -->

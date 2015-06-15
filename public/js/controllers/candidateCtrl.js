@@ -36,6 +36,11 @@ app.controller('candidateCtrl', function($scope, candidateService) { //what para
 	    
 	};
 
+	$scope.serchCandidates = function() {
+		
+		console.log('searchCandidates() works');
+	}
+
 	$scope.deleteCandidate = function() {
 		//mor LoGiC
 		console.log('deleteCandidate() works');
