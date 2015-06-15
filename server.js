@@ -47,7 +47,7 @@ app.post('/candidates', function(req, res) {
 // 	});
 // });
 
-//get all candidates from db
+//get all candidates from dbcd
 
 //TESTs
 app.get('/candidates', function(req, res) { // change "home" to '/' if bug
