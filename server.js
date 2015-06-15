@@ -50,9 +50,9 @@ app.post('/candidates', function(req, res) {
 //get all candidates from dbcd
 
 //TESTs
-app.get('/candidates', function(req, res) { // change "home" to '/' if bug
+app.get('/candidates', function(req, res) { 
 
-	console.log('server received GET request');
+	console.log('server received GET request for all');
 
 	Candidate.find(function(err, cands) {  // .find() will return array(full of objs.)
 		console.log(cands);
@@ -60,6 +60,15 @@ app.get('/candidates', function(req, res) { // change "home" to '/' if bug
 	});
 
 });
+
+app.get('/candidates/:id', function(req, res) {
+	console.log('server got GET req for 1 cand');
+
+	Candidate.find(function(err, cand) {
+		console.log(can);
+		res.json(can);
+	})
+})
 
 // app.get('/candidates/:name', function(req, res) {
 //     var name = req.params.name;

@@ -2,12 +2,15 @@ var app = angular.module('dupApp');
 
 app.controller('candidateCtrl', function($scope, candidateService) { //what params?
 
+
+
 	$scope.candidateList = []; 
 	
-	$scope.loadCandidates = function(some_bs) {
+	$scope.loadCandidates = function() {
 		console.log('Load cans...will work some day');
-		candidateService.getCandidates() // not sure
-			.then() ///what here?
+
+		return candidateService.getCandidates() // not sure
+			.then(candidateService.getCandidates()) ///what here?
 	}
    
 	$scope.addCandidate = function() {
@@ -28,14 +31,27 @@ app.controller('candidateCtrl', function($scope, candidateService) { //what para
 
 	$scope.editCandidate = function() {
 		//put ZE LOGIC
-		console.log('edit button, editCandidate() work' );
+		console.log('editCandidate() works' );
 
 	    
 	};
 
 	$scope.deleteCandidate = function() {
 		//mor LoGiC
-		console.log('delete button, deleteCandidate() work');
-	}
+		console.log('deleteCandidate() works');
+	};
+
+	
+	// var init = function('load', $scope.loadCandidates, initCB) {
+	// 	var internalDependencies = $q.all($scope.loadCandidates);
+	// 	return internalDependencies.then(initCB);
+	// 	} 
+	// }
+	var init = function() {
+		console.log('why is this loading 2 times in a row?')
+		$scope.loadCandidates();
+	};
+	init();
+
 
 });

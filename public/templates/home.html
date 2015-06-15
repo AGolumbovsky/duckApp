@@ -2,28 +2,36 @@
 
 
 <div class="container" ng-controller="candidateCtrl">
+
+		<!-- ### Enter the candidates form ### -->
+
 		<div>
 			<br>
 			
 			Name:
 			<br>
-			<input type="text" placeholder="you are an asshole" ng-model="newCandidate.name" />
+			<input type="text" placeholder="what the duck" ng-model="newCandidate.name" />
 			{{ newCandidate.name }}
 			<br>
 			
 
 			Location:
 			<br>
-			<input type="text" placeholder="nobody likes you" ng-model="newCandidate.location" />			{{ newCandidate.location }}
+			<input type="text" placeholder="where the duck" ng-model="newCandidate.location" />			{{ newCandidate.location }}
 			<br>
 			<br>
 
 			<button ng-click="addCandidate()">Add Candidate</button>
 		</div>
 		<br>
-			<!-- don't forget to delete this  -->
-			<button ng-click="loadCandidates()">Stupid is What Stupid Loads</button>
-		<br>
+
+		<!-- ### search for candiddates ### -->
+
+		<input type="text" placeholder="search for duck" ng-model="searchCandidates.name" />
+			{{ searchCandidates.name }}
+		
+		<!-- ### display candidates in the list ### -->
+
 		<div class="container">
 			<!-- look up and use css overflow to make dem 1 size-->
 			<ul ng-repeat="candidate in candidateList">
