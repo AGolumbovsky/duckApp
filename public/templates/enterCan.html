@@ -1,0 +1,17 @@
+<div class="container" ng-controller="enterCanCtrl">
+			<br>
+			
+			Name:
+			<input type="text" placeholder="what the duck" ng-model="newCandidate.name" />
+			{{ newCandidate.name }}
+			<br>
+			
+
+			Location:
+			<input type="text" placeholder="where the duck" ng-model="newCandidate.location" />			{{ newCandidate.location }}
+			<br>
+			<br>
+
+			<button ng-click="addCandidate()">Add Candidate</button>
+</div>
+		<br>

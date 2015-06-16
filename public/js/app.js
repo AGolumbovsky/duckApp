@@ -6,8 +6,12 @@ app.config(function($routeProvider) {
 			templateUrl: 'templates/home.html', 
 			controller: 'candidateCtrl'
 		})
+		.when('/enterCan', {
+			templateUrl: 'templates/enterCan.html', 
+			controller: 'candidateCtrl'
+		})
 		.otherwise({
-			redirectTo: '/'
+			redirectTo: '/ass'
 		})
 });
 

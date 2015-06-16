@@ -1,10 +1,26 @@
 var app = angular.module('dupApp');
 
-app.controller('candidateCtrl', function($scope, candidateService) { //what params?
+app.controller('candidateCtrl', function($scope, candidateService) {
 
 
 
 	$scope.candidateList = []; 
+
+	// $scope.addCandidate = function() {
+	// 	console.log($scope.newCandidate);
+
+		
+	// 	$scope.candidateList.push($scope.newCandidate);
+
+	// 	candidateService.addCandidate($scope.newCandidate)
+	// 	.then(function(res) {
+	// 		console.log('got response', res);
+	// 		candidateService.getCandidates().then(function(res) {
+	// 			$scope.candidateList = res;
+	// 		})
+	// 	})
+	// 	$scope.newCandidate = {};
+	// };
 	
 	$scope.loadCandidates = function() {
 		console.log('Load cans...will work some day');
@@ -12,22 +28,6 @@ app.controller('candidateCtrl', function($scope, candidateService) { //what para
 		return candidateService.getCandidates() // not sure
 			.then(candidateService.getCandidates()) ///what here?
 	}
-   
-	$scope.addCandidate = function() {
-		console.log($scope.newCandidate);
-
-		
-		$scope.candidateList.push($scope.newCandidate);
-
-		candidateService.addCandidate($scope.newCandidate)
-		.then(function(res) {
-			console.log('got response', res);
-			candidateService.getCandidates().then(function(res) {
-				$scope.candidateList = res;
-			})
-		})
-		$scope.newCandidate = {};
-	};
 
 	$scope.editCandidate = function() {
 		//put ZE LOGIC
@@ -36,8 +36,8 @@ app.controller('candidateCtrl', function($scope, candidateService) { //what para
 	    
 	};
 
-	$scope.serchCandidates = function() {
-		
+	$scope.searchCandidates = function() {
+
 		console.log('searchCandidates() works');
 	}
 
@@ -53,9 +53,10 @@ app.controller('candidateCtrl', function($scope, candidateService) { //what para
 	// 	} 
 	// }
 	var init = function() {
-		console.log('why is this loading 2 times in a row?')
+		console.log('loading 2 times in a row?')
 		$scope.loadCandidates();
 	};
+
 	init();
 
 

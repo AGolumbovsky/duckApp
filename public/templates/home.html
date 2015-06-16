@@ -5,29 +5,13 @@
 
 		<!-- ### Enter the candidates form ### -->
 
-		<div>
-			<br>
-			
-			Name:
-			<br>
-			<input type="text" placeholder="what the duck" ng-model="newCandidate.name" />
-			{{ newCandidate.name }}
-			<br>
-			
-
-			Location:
-			<br>
-			<input type="text" placeholder="where the duck" ng-model="newCandidate.location" />			{{ newCandidate.location }}
-			<br>
-			<br>
-
-			<button ng-click="addCandidate()">Add Candidate</button>
-		</div>
-		<br>
+		
 
 		<!-- ### search for candiddates ### -->
 
 		<div>
+			<br>
+			<br>
 			<input type="text" placeholder="search for duck" ng-model="searchCandidates.name" />
 
 			<button ng-click="searchCandidates()">Search</button>
