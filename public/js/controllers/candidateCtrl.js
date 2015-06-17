@@ -1,10 +1,11 @@
 var app = angular.module('dupApp');
 
-app.controller('candidateCtrl', function($scope, candidateService) {
+app.controller('candidateCtrl', function($scope, candidateService, candidates) {
 
 
 
-	$scope.candidateList = []; 
+	$scope.candidateList = candidates;
+	console.log(candidates);
 
 	// $scope.addCandidate = function() {
 	// 	console.log($scope.newCandidate);
@@ -52,12 +53,14 @@ app.controller('candidateCtrl', function($scope, candidateService) {
 	// 	return internalDependencies.then(initCB);
 	// 	} 
 	// }
-	var init = function() {
-		console.log('loading 2 times in a row?')
-		$scope.loadCandidates();
-	};
 
-	init();
+
+	// var init = function() {
+	// 	console.log('loading 2 times in a row?')
+	// 	$scope.loadCandidates();
+	// };
+
+	// init();
 
 
 });

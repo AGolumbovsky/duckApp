@@ -1,6 +1,7 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+
 //require models 
 //var User = require('./api/models/User');
 var Candidate = require('./api/models/Candidate');
@@ -8,12 +9,12 @@ var Candidate = require('./api/models/Candidate');
 //create the server
 var app = express();
 
-// middolware
+// middleware
 
 // static == html css image files in the
 // in the public forlder
 app.use(express.static(__dirname + '/public'));
-//parse the shit out of json
+//parse the json
 app.use(bodyParser.json());
 
 // connections to mongo
@@ -105,3 +106,4 @@ app.listen(port, function() {
 // ALT code
 
 //app.listen(process.env.PORT || port /* || 8080 */);
+

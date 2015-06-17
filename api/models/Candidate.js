@@ -5,7 +5,7 @@ var candidateSchema = new Schema({
 	name: String, 
 	location: String, 
 	rating: Number
-	//more once this shit works
+	//more once this works
 });
 
 module.exports = mongoose.model('Candidate', candidateSchema);

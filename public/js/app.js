@@ -4,7 +4,12 @@ app.config(function($routeProvider) {
 	$routeProvider
 		.when('/', {
 			templateUrl: 'templates/home.html', 
-			controller: 'candidateCtrl'
+			controller: 'candidateCtrl', 
+			resolve: {
+				candidates: function(candidateService) {
+					return candidateService.getCandidates()
+				} 
+			}
 		})
 		.when('/enterCan', {
 			templateUrl: 'templates/enterCan.html', 
