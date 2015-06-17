@@ -2,6 +2,7 @@ var app = angular.module('dupApp');
 
 app.service('candidateService', function($http, $q) {
 
+	//get all the candidates from db
 	this.getCandidates = function() {
 		var dfd = $q.defer();
 
@@ -15,6 +16,7 @@ app.service('candidateService', function($http, $q) {
 			return dfd.promise;
 	};
 
+	// get one candidate from db
 	this.getCandidate = function() {
 		var dfd = $q.defer();
 		$http({
@@ -28,6 +30,7 @@ app.service('candidateService', function($http, $q) {
 
 	}
 
+	// add a new candidate to the db
 	this.addCandidate = function(newCandidate) {
 		var dfd = $q.defer();
 

@@ -49,7 +49,7 @@ app.post('/candidates', function(req, res) {
 
 //get all candidates from dbcd
 
-//TESTs
+
 app.get('/candidates', function(req, res) { 
 
 	console.log('server received GET request for all');
