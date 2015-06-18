@@ -6,7 +6,7 @@ app.controller('enterCanCtrl', function($scope, candidateService, $location) {
 
 		console.log($scope.newCandidate);
 
-		$scope.candidateList.push($scope.newCandidate);
+		candidateList.push($scope.newCandidate);
 
 		candidateService.addCandidate($scope.newCandidate)
 		.then(function(res) {

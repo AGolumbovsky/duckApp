@@ -1,6 +1,6 @@
 var app = angular.module('dupApp');
 
-app.controller('candidateCtrl', function($scope, candidateService, candidates) {
+app.controller('candidateCtrl', ['candidateService', function($scope, candidateService, candidates) {
 
 
 
@@ -45,6 +45,8 @@ app.controller('candidateCtrl', function($scope, candidateService, candidates) {
 	$scope.deleteCandidate = function() {
 		//mor LoGiC
 		console.log('deleteCandidate() works');
+		return candidateService.deleteCandidate()
+			.then(candidateService.getCandidates())
 	};
 
 	
@@ -63,4 +65,4 @@ app.controller('candidateCtrl', function($scope, candidateService, candidates) {
 	// init();
 
 
-});
+}]);
