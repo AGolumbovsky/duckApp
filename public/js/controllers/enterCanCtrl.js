@@ -27,7 +27,3 @@ app.controller('enterCanCtrl', ['candidateService', function($scope, candidateSe
 	
 	}]);
 
-	
-
-
-
