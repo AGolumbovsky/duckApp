@@ -2,6 +2,7 @@ var app = angular.module('dupApp');
 
 app.service('candidateService', function($http, $q) {
 
+
 	//get all the candidates from db
 	this.getCandidates = function() {
 		var dfd = $q.defer();

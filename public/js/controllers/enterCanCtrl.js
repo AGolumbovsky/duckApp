@@ -1,12 +1,12 @@
 var app = angular.module('dupApp');
 
-app.controller('enterCanCtrl', function($scope, candidateService, $location) {
+app.controller('enterCanCtrl', ['candidateService', function($scope, candidateService, $location) {
 
 	$scope.addCandidate = function() {
 
 		console.log($scope.newCandidate);
 
-		candidateList.push($scope.newCandidate);
+		//candidateList.push($scope.newCandidate);
 
 		candidateService.addCandidate($scope.newCandidate)
 		.then(function(res) {
@@ -25,7 +25,7 @@ app.controller('enterCanCtrl', function($scope, candidateService, $location) {
 	}
 
 	
-	});
+	}]);
 
 	
 

@@ -2,8 +2,6 @@ var app = angular.module('dupApp');
 
 app.controller('candidateCtrl', ['candidateService', function($scope, candidateService, candidates) {
 
-
-
 	$scope.candidateList = candidates;
 	console.log(candidates);
 
