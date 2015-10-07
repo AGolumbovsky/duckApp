@@ -2,7 +2,7 @@ var app = angular.module('dupApp');
 
 app.controller('candidateCtrl', ['candidateService', function($scope, candidateService, candidates) {
 
-	$scope.candidateList = candidates;
+	$scope.candidateList = {};
 	console.log(candidates);
 
 	// $scope.addCandidate = function() {
@@ -21,15 +21,28 @@ app.controller('candidateCtrl', ['candidateService', function($scope, candidateS
 	// 	$scope.newCandidate = {};
 	// };
 	
-	$scope.loadCandidates = function() {
-		console.log('Load cans...will work some day');
+	
 
-		return candidateService.getCandidates() // not sure
-			.then(candidateService.getCandidates()) ///what here?
-	}
+	($scope.loadCandidates = function(candidateService) {
+
+        console.log('Load cans...will work some day');
+
+        candidateService.getCandidates() // not sure
+        	.then(function(data) {
+            console.log(data);
+            $scope.candidateList = data;
+
+            })
+    })();
+
+
+
+
+
+
 
 	$scope.editCandidate = function() {
-		//put ZE LOGIC
+		
 		console.log('editCandidate() works' );
 
 	    
@@ -61,6 +74,5 @@ app.controller('candidateCtrl', ['candidateService', function($scope, candidateS
 	// };
 
 	// init();
-
 
 }]);

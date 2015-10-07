@@ -66,8 +66,8 @@ app.get('/candidates/:id', function(req, res) {
 	console.log('server got GET req for 1 cand');
 
 	Candidate.find(function(err, cand) {
-		console.log(can);
-		res.json(can);
+		console.log(cand);
+		res.json(cand);
 	})
 })
 
@@ -101,7 +101,7 @@ app.get('/candidates/:id', function(req, res) {
 
 
 app.listen(port, function() {
-	console.log('listening on ' + port);
+	console.log('Ducks listening on ' + port);
 });
 // ALT code
 
