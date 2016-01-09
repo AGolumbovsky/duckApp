@@ -62,6 +62,7 @@ app.get('/candidates', function(req, res) {
 
 });
 
+
 app.get('/candidates/:id', function(req, res) {
 	console.log('server got GET req for 1 cand');
 
